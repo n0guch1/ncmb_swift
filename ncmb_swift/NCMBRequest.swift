@@ -6,6 +6,6 @@
 
 import UIKit
 
-class NCMBRequest: NSMutableURLRequest {
+public class NCMBRequest: NSMutableURLRequest {
 
 }

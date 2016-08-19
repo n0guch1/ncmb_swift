@@ -6,6 +6,6 @@
 
 import UIKit
 
-class NCMBDate: NSObject {
+public class NCMBDate: NSObject {
 
 }

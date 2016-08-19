@@ -6,6 +6,6 @@
 
 import UIKit
 
-class NCMBPointer: NSObject {
+public class NCMBPointer: NSObject {
 
 }

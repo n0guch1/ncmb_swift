@@ -6,6 +6,6 @@
 
 import UIKit
 
-class NCMBGeopoint: NSObject {
+public class NCMBGeopoint: NSObject {
 
 }

@@ -6,6 +6,6 @@
 
 import UIKit
 
-class NCMBRelation: NSObject {
+public class NCMBRelation: NSObject {
 
 }

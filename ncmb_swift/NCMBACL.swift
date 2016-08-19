@@ -6,6 +6,6 @@
 
 import UIKit
 
-class NCMBACL: NSObject {
+public class NCMBACL: NSObject {
 
 }
