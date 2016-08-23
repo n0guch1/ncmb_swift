@@ -7,7 +7,7 @@
 import XCTest
 @testable import ncmb_swift
 
-class ncmb_swiftTests: XCTestCase {
+class NCMBTests: XCTestCase {
     
     var applicationKey: String  = "dummyApplicationKey"
     var clientKey: String  = "dummyClientKey"
