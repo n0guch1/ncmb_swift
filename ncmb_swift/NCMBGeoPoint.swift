@@ -6,7 +6,7 @@
 
 import UIKit
 
-public class NCMBGeopoint: NSObject {
+public class NCMBGeoPoint: NSObject {
     public var latitude: Double = 0.0
     public var longitude: Double = 0.0
     
