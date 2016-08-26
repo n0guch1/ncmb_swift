@@ -15,7 +15,7 @@ public class NCMBPointer: NSObject {
         self.objectId = objectId
     }
     
-    init(params:Dictionary<String,AnyObject>){
+    init(params: Dictionary<String,AnyObject>){
         if(params["className"] == nil && params["objectId"] == nil){
             NSException(name: NSInvalidArgumentException, reason: "className or objectId must not nil.", userInfo: nil).raise()
         }
@@ -26,8 +26,8 @@ public class NCMBPointer: NSObject {
     public func toDictionary() -> (Dictionary<String, AnyObject>) {
         let dic: Dictionary<String, AnyObject> = ["__type": "Pointer",
                                                           "className": self.className,
-                                                          "objectId":self.objectId]
-        return (dic)
+                                                          "objectId": self.objectId]
+        return dic
     }
     
 }

@@ -26,7 +26,7 @@ public class NCMBDate: NSObject {
     public func toDictionary() -> (Dictionary<String, AnyObject>) {
         let dic: Dictionary<String, AnyObject> = ["__type": "Date",
                                                   "iso": toString()]
-        return (dic)
+        return dic
     }
     
     public func toString() -> (String){
@@ -35,7 +35,7 @@ public class NCMBDate: NSObject {
         return iso8601Formatter.stringFromDate(self.date)
     }
     
-    func dateFromString(dateString:String)  -> (NSDate) {
+    func dateFromString(dateString: String)  -> (NSDate) {
         let date_formatter: NSDateFormatter = NSDateFormatter()
         date_formatter.dateFormat = NCMBDate.dateFormat
         return date_formatter.dateFromString(dateString)!
