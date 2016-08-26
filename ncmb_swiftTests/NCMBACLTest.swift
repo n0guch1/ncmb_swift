@@ -2,34 +2,71 @@
 //  NCMBACLTest.swift
 //  ncmb_swift
 //
-//  Created by PBI06460 on 2016/08/24.
-//
 //
 
 import XCTest
+@testable import ncmb_swift
 
 class NCMBACLTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testSetAccess() {
+        let acl = NCMBACL()
+        
+        // public permission
+        acl.setPublicReadAccess(true)
+        acl.setPublicWriteAccess(true)
+        XCTAssertTrue(acl.isPublicReadAccess())
+        XCTAssertTrue(acl.isPublicWriteAccess())
+        
+        acl.setPublicReadAccess(false)
+        acl.setPublicWriteAccess(false)
+        XCTAssertFalse(acl.isPublicReadAccess())
+        XCTAssertFalse(acl.isPublicWriteAccess())
+        
+        // user permission
+        let objectId = "dummyObjectId"
+        acl.setUserReadAccess(objectId, allowed: true)
+        acl.setUserWriteAccess(objectId, allowed: true)
+        XCTAssertTrue(acl.isUserReadAccess(objectId))
+        XCTAssertTrue(acl.isUserWriteAccess(objectId))
+        
+        acl.setUserReadAccess(objectId, allowed: false)
+        acl.setUserWriteAccess(objectId, allowed: false)
+        XCTAssertFalse(acl.isUserReadAccess(objectId))
+        XCTAssertFalse(acl.isUserWriteAccess(objectId))
+        
+        // role permission
+        let roleName = "roleName"
+        acl.setRoleReadAccess(roleName, allowed: true)
+        acl.setRoleWriteAccess(roleName, allowed: true)
+        XCTAssertTrue(acl.isRoleReadAccess(roleName))
+        XCTAssertTrue(acl.isRoleWriteAccess(roleName))
+        
+        acl.setRoleReadAccess(roleName, allowed: false)
+        acl.setRoleWriteAccess(roleName, allowed: false)
+        XCTAssertFalse(acl.isRoleReadAccess(roleName))
+        XCTAssertFalse(acl.isRoleWriteAccess(roleName))
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testToDictionary() {
+        let objectId = "dummyObjectId"
+        var acl = NCMBACL()
+        acl.setPublicReadAccess(true)
+        acl.setUserWriteAccess(objectId, allowed: true)
+        var dic = acl.toDictionary()
+        XCTAssertEqual(dic["acl"]!["*"]!["read"], true)
+        XCTAssertEqual(dic["acl"]![objectId]!["write"], true)
+
+        acl = NCMBACL(params: dic)
+        XCTAssertTrue(acl.isPublicReadAccess())
+        XCTAssertTrue(acl.isUserWriteAccess(objectId))
     }
-    
 }
