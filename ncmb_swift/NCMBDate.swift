@@ -14,6 +14,12 @@ public class NCMBDate: NSObject {
         self.date = date
     }
     
+    init(dateString:String){
+        let formatter: NSDateFormatter = NSDateFormatter()
+        formatter.dateFormat = NCMBDate.dateFormat
+        self.date = formatter.dateFromString(dateString)!
+    }
+    
     init(params:Dictionary<String,AnyObject>){
         super.init()
         
