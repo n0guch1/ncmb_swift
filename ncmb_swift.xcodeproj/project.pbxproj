@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99324E121D7400330073CA94 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99324E111D7400330073CA94 /* CryptoSwift.framework */; };
+		99324E191D7401DA0073CA94 /* NCMBACLTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99324E131D7401DA0073CA94 /* NCMBACLTest.swift */; };
+		99324E1A1D7401DA0073CA94 /* NCMBDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99324E141D7401DA0073CA94 /* NCMBDateTests.swift */; };
+		99324E1B1D7401DA0073CA94 /* NCMBGeoPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99324E151D7401DA0073CA94 /* NCMBGeoPointTests.swift */; };
+		99324E1C1D7401DA0073CA94 /* NCMBPointerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99324E161D7401DA0073CA94 /* NCMBPointerTests.swift */; };
+		99324E1D1D7401DA0073CA94 /* NCMBRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99324E171D7401DA0073CA94 /* NCMBRequestTests.swift */; };
+		99324E1E1D7401DA0073CA94 /* NCMBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99324E181D7401DA0073CA94 /* NCMBTests.swift */; };
+		99324E1F1D7402A10073CA94 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99324E111D7400330073CA94 /* CryptoSwift.framework */; };
+		99324E211D7403660073CA94 /* CryptoSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 99324E111D7400330073CA94 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		997579B11D66C13200D6E10A /* ncmb_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997579A61D66C13200D6E10A /* ncmb_swift.framework */; };
-		997579B61D66C13200D6E10A /* ncmb_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997579B51D66C13200D6E10A /* ncmb_swiftTests.swift */; };
 		997579C11D66C19600D6E10A /* NCMB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997579C01D66C19600D6E10A /* NCMB.swift */; };
 		997579C21D66C19600D6E10A /* NCMB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997579C01D66C19600D6E10A /* NCMB.swift */; };
 		997579C41D66C3F200D6E10A /* NCMBACL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997579C31D66C3F200D6E10A /* NCMBACL.swift */; };
@@ -35,11 +43,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		99324E201D74035A0073CA94 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				99324E211D7403660073CA94 /* CryptoSwift.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		99324E111D7400330073CA94 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
+		99324E131D7401DA0073CA94 /* NCMBACLTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBACLTest.swift; sourceTree = "<group>"; };
+		99324E141D7401DA0073CA94 /* NCMBDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBDateTests.swift; sourceTree = "<group>"; };
+		99324E151D7401DA0073CA94 /* NCMBGeoPointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBGeoPointTests.swift; sourceTree = "<group>"; };
+		99324E161D7401DA0073CA94 /* NCMBPointerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBPointerTests.swift; sourceTree = "<group>"; };
+		99324E171D7401DA0073CA94 /* NCMBRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBRequestTests.swift; sourceTree = "<group>"; };
+		99324E181D7401DA0073CA94 /* NCMBTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBTests.swift; sourceTree = "<group>"; };
 		997579A61D66C13200D6E10A /* ncmb_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ncmb_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		997579AB1D66C13200D6E10A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		997579B01D66C13200D6E10A /* ncmb_swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ncmb_swiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		997579B51D66C13200D6E10A /* ncmb_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ncmb_swiftTests.swift; sourceTree = "<group>"; };
 		997579B71D66C13200D6E10A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		997579C01D66C19600D6E10A /* NCMB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMB.swift; sourceTree = "<group>"; };
 		997579C31D66C3F200D6E10A /* NCMBACL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBACL.swift; sourceTree = "<group>"; };
@@ -55,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99324E121D7400330073CA94 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				997579B11D66C13200D6E10A /* ncmb_swift.framework in Frameworks */,
+				99324E1F1D7402A10073CA94 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +101,7 @@
 		9975799C1D66C13200D6E10A = {
 			isa = PBXGroup;
 			children = (
+				99324E111D7400330073CA94 /* CryptoSwift.framework */,
 				997579A81D66C13200D6E10A /* ncmb_swift */,
 				997579B41D66C13200D6E10A /* ncmb_swiftTests */,
 				997579A71D66C13200D6E10A /* Products */,
@@ -105,7 +135,12 @@
 		997579B41D66C13200D6E10A /* ncmb_swiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				997579B51D66C13200D6E10A /* ncmb_swiftTests.swift */,
+				99324E131D7401DA0073CA94 /* NCMBACLTest.swift */,
+				99324E141D7401DA0073CA94 /* NCMBDateTests.swift */,
+				99324E151D7401DA0073CA94 /* NCMBGeoPointTests.swift */,
+				99324E161D7401DA0073CA94 /* NCMBPointerTests.swift */,
+				99324E171D7401DA0073CA94 /* NCMBRequestTests.swift */,
+				99324E181D7401DA0073CA94 /* NCMBTests.swift */,
 				997579B71D66C13200D6E10A /* Info.plist */,
 			);
 			path = ncmb_swiftTests;
@@ -149,6 +184,7 @@
 				997579AC1D66C13200D6E10A /* Sources */,
 				997579AD1D66C13200D6E10A /* Frameworks */,
 				997579AE1D66C13200D6E10A /* Resources */,
+				99324E201D74035A0073CA94 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -231,14 +267,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99324E1B1D7401DA0073CA94 /* NCMBGeoPointTests.swift in Sources */,
+				99324E1E1D7401DA0073CA94 /* NCMBTests.swift in Sources */,
+				99324E191D7401DA0073CA94 /* NCMBACLTest.swift in Sources */,
 				997579CB1D66C41F00D6E10A /* NCMBGeopoint.swift in Sources */,
-				997579B61D66C13200D6E10A /* ncmb_swiftTests.swift in Sources */,
+				99324E1D1D7401DA0073CA94 /* NCMBRequestTests.swift in Sources */,
 				997579C21D66C19600D6E10A /* NCMB.swift in Sources */,
+				99324E1C1D7401DA0073CA94 /* NCMBPointerTests.swift in Sources */,
 				997579D11D66C43E00D6E10A /* NCMBPointer.swift in Sources */,
 				997579C51D66C3F200D6E10A /* NCMBACL.swift in Sources */,
 				997579D41D66C45600D6E10A /* NCMBRequest.swift in Sources */,
 				997579C81D66C40F00D6E10A /* NCMBDate.swift in Sources */,
 				997579CE1D66C42F00D6E10A /* NCMBRelation.swift in Sources */,
+				99324E1A1D7401DA0073CA94 /* NCMBDateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,9 +393,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ncmb_swift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nifty.cloud.mb.ncmb-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -371,9 +416,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ncmb_swift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nifty.cloud.mb.ncmb-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -384,6 +433,10 @@
 		997579BE1D66C13200D6E10A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ncmb_swiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nifty.cloud.mb.ncmb-swiftTests";
@@ -394,6 +447,10 @@
 		997579BF1D66C13200D6E10A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ncmb_swiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nifty.cloud.mb.ncmb-swiftTests";
@@ -420,6 +477,7 @@
 				997579BC1D66C13200D6E10A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		997579BD1D66C13200D6E10A /* Build configuration list for PBXNativeTarget "ncmb_swiftTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +486,7 @@
 				997579BF1D66C13200D6E10A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,7 @@ import UIKit
 
 public class NCMB: NSObject {
 
+    public static let sdkVersion = "0.1.0"
     public static var applicationKey: String  = ""
     public static var clientKey: String  = ""
     
