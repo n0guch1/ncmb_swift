@@ -16,7 +16,7 @@ public class NCMBPointer: NSObject {
     }
     
     init(params: Dictionary<String,AnyObject>){
-        if(params["className"] == nil && params["objectId"] == nil){
+        if params["className"] == nil && params["objectId"] == nil {
             NSException(name: NSInvalidArgumentException, reason: "className or objectId must not nil.", userInfo: nil).raise()
         }
         self.className = params["className"] as! String

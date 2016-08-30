@@ -15,9 +15,8 @@ public class NCMBGeoPoint: NSObject {
         self.longitude = longitude
     }
     
-    
     init(params: Dictionary<String,AnyObject>){
-        if(params["latitude"] == nil && params["longitude"] == nil){
+        if params["latitude"] == nil && params["longitude"] == nil {
             NSException(name: NSInvalidArgumentException, reason: "latitude or longitude must not nil.", userInfo: nil).raise()
         }
         self.latitude = params["latitude"] as! Double
