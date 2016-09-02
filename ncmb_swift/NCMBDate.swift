@@ -7,26 +7,24 @@
 import UIKit
 
 public class NCMBDate: NSObject {
+    
     public var date: NSDate = NSDate()
-    public static let dateFormat: String = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     
     init(date:NSDate){
         self.date = date
     }
     
     init(dateString:String){
-        let formatter: NSDateFormatter = NSDateFormatter()
-        formatter.dateFormat = NCMBDate.dateFormat
-        self.date = formatter.dateFromString(dateString)!
+        super.init()
+        self.date = NCMBDate.iso8601Formatter().dateFromString(dateString)!
     }
     
     init(params:Dictionary<String,AnyObject>){
         super.init()
-        
         if(params["iso"] == nil){
             NSException(name: NSInvalidArgumentException, reason: "iso must not nil.", userInfo: nil).raise()
         }
-        self.date = dateFromString(params["iso"] as! String)
+        self.date = self.dateFromString(params["iso"] as! String)
     }
     
     public func toDictionary() -> (Dictionary<String, AnyObject>) {
@@ -36,14 +34,17 @@ public class NCMBDate: NSObject {
     }
     
     public func toString() -> (String){
+        return NCMBDate.iso8601Formatter().stringFromDate(self.date)
+    }
+    
+    public static func iso8601Formatter() -> (NSDateFormatter){
         let iso8601Formatter = NSDateFormatter()
-        iso8601Formatter.dateFormat = NCMBDate.dateFormat
-        return iso8601Formatter.stringFromDate(self.date)
+        iso8601Formatter.timeZone = NSTimeZone.localTimeZone()
+        iso8601Formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        return iso8601Formatter
     }
     
     func dateFromString(dateString: String)  -> (NSDate) {
-        let date_formatter: NSDateFormatter = NSDateFormatter()
-        date_formatter.dateFormat = NCMBDate.dateFormat
-        return date_formatter.dateFromString(dateString)!
+        return NCMBDate.iso8601Formatter().dateFromString(dateString)!
     }
 }
