@@ -7,7 +7,7 @@
 import XCTest
 @testable import ncmb_swift
 
-class NCMBACLTest: XCTestCase {
+class NCMBACLTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

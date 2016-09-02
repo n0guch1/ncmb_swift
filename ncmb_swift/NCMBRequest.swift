@@ -9,6 +9,7 @@ import Foundation
 import CryptoSwift
 
 public class NCMBRequest: NSMutableURLRequest {
+    
     public let fqdn: String = "mb.api.cloud.nifty.com"
     public let signatureMethod: String = "SignatureMethod=HmacSHA256"
     public let signatureVersion: String = "SignatureVersion=2"
@@ -22,19 +23,19 @@ public class NCMBRequest: NSMutableURLRequest {
     public let headerContentTypeJson: String = "application/json"
     public let headerContentTypeFormData: String = "multipart/form-data"
     
+    var query: NCMBQuery!
+    var queryString: String!
+    var timestampString: String!
     
-    var timestampString: String = ""
-    var queryString: String = ""
-    
-    convenience init(URL:NSURL){
+    convenience init(URL:NSURL) {
         self.init(URL: URL, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData)
     }
     
-    convenience init(URL:NSURL,cachePolicy:NSURLRequestCachePolicy){
+    convenience init(URL:NSURL,cachePolicy:NSURLRequestCachePolicy) {
         self.init(URL: URL ,cachePolicy:cachePolicy, timeoutInterval: 10.0)
     }
     
-    override init(URL:NSURL,cachePolicy:NSURLRequestCachePolicy,timeoutInterval: NSTimeInterval){
+    override init(URL:NSURL,cachePolicy:NSURLRequestCachePolicy,timeoutInterval: NSTimeInterval) {
         super.init(URL: URL, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData,timeoutInterval: timeoutInterval)
         setDefaultHeaders()
     }
@@ -43,9 +44,9 @@ public class NCMBRequest: NSMutableURLRequest {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setDefaultHeaders(){
+    func setDefaultHeaders() {
         setValue(NCMB.applicationKey, forHTTPHeaderField: self.headerApplicationKey)
-        setValue("swift-"+NCMB.sdkVersion, forHTTPHeaderField: self.headerSdkVersionKey)
+        setValue("swift-" + NCMB.sdkVersion, forHTTPHeaderField: self.headerSdkVersionKey)
         setValue(UIDevice.currentDevice().systemVersion, forHTTPHeaderField: self.headerOsVersion)
         // デフォルト現在時刻を設定
         self.timestampString = NCMBDate(date: NSDate()).toString()
@@ -54,53 +55,76 @@ public class NCMBRequest: NSMutableURLRequest {
         setValue(self.headerContentTypeJson, forHTTPHeaderField: self.headerContentTypeKey)
     }
     
-    public var HTTPContentType:String {
-        get{
+    public var HTTPContentType: String {
+        get {
             return allHTTPHeaderFields![headerContentTypeKey]!
         }
-        set(value){
+        set(value) {
             setValue(value, forHTTPHeaderField: self.headerContentTypeKey)
         }
     }
     
-    public var HTTPTimestamp:NSDate {
-        get{
+    public var HTTPTimestamp: String {
+        get {
             let dateString = allHTTPHeaderFields![headerTimestampKey]!
-            return NCMBDate.init(dateString: dateString).date
+            return dateString
         }
-        set(value){
-            self.timestampString = NCMBDate(date: value).toString()
+        set(value) {
+            self.timestampString = NCMBDate(dateString: value).toString()
             setValue(self.timestampString, forHTTPHeaderField: self.headerTimestampKey)
         }
     }
     
-    public var HTTPSessionToken:String {
-        get{
+    public var HTTPSessionToken: String {
+        get {
             var result = ""
-            if allHTTPHeaderFields?.keys.contains(headerSessionTokenKey) == true{
+            if allHTTPHeaderFields?.keys.contains(headerSessionTokenKey) == true {
                 result = allHTTPHeaderFields![headerSessionTokenKey]!
             }
             return result
         }
-        set(value){
+        set(value) {
             setValue(value, forHTTPHeaderField: self.headerSessionTokenKey)
         }
     }
     
-    public var HTTPSignature:String {
-        get{
+    public var HTTPSignature: String {
+        get {
             var result = ""
             if allHTTPHeaderFields?.keys.contains(headerSignatureKey) == true{
                 result = allHTTPHeaderFields![headerSignatureKey]!
             }
             return result
         }
-        set(value){
+        set(value) {
             setValue(value, forHTTPHeaderField: self.headerSignatureKey)
         }
     }
     
-    public func createSignature() -> String{
+    public var HTTPQuery: NCMBQuery {
+        get {
+            return self.query
+        }
+        set(value) {
+            self.query = value
+            self.queryString = createQueryString(self.query)
+        }
+    }
+    
+    func createQueryString(query: NCMBQuery) -> String {
+        var queryStr = ""
+        do {
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(query.toDictionary(), options:  NSJSONWritingOptions.init(rawValue: 0))
+            let jsonString = String(data:jsonData, encoding:NSUTF8StringEncoding)!
+            queryStr = "where=" + jsonString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())!
+            URL = NSURL(string: (URL?.absoluteString)! + "?" + queryStr)
+        } catch let error as NSError {
+            NSException(name: NSInvalidArgumentException, reason: error.localizedDescription, userInfo: error.userInfo).raise()
+        }
+        return queryStr
+    }
+    
+    public func createSignature() -> String {
         //シグネチャ生成用文字列を作成
         var signatureDataString = HTTPMethod + "\n"
         signatureDataString += self.fqdn + "\n"
@@ -109,8 +133,8 @@ public class NCMBRequest: NSMutableURLRequest {
         signatureDataString += self.signatureVersion + "&"
         signatureDataString += self.headerApplicationKey + "=" + NCMB.applicationKey + "&"
         signatureDataString += self.headerTimestampKey + "=" + self.timestampString
-        if !queryString.isEmpty{
-            signatureDataString += "&" + queryString
+        if self.query != nil {
+            signatureDataString += "&" + self.queryString
         }
         
         //SHA256でハッシュ化

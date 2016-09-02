@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		99324E121D7400330073CA94 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99324E111D7400330073CA94 /* CryptoSwift.framework */; };
-		99324E191D7401DA0073CA94 /* NCMBACLTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99324E131D7401DA0073CA94 /* NCMBACLTest.swift */; };
+		99324E191D7401DA0073CA94 /* NCMBACLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99324E131D7401DA0073CA94 /* NCMBACLTests.swift */; };
 		99324E1A1D7401DA0073CA94 /* NCMBDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99324E141D7401DA0073CA94 /* NCMBDateTests.swift */; };
 		99324E1B1D7401DA0073CA94 /* NCMBGeoPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99324E151D7401DA0073CA94 /* NCMBGeoPointTests.swift */; };
 		99324E1C1D7401DA0073CA94 /* NCMBPointerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99324E161D7401DA0073CA94 /* NCMBPointerTests.swift */; };
@@ -31,6 +31,9 @@
 		997579D11D66C43E00D6E10A /* NCMBPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997579CF1D66C43E00D6E10A /* NCMBPointer.swift */; };
 		997579D31D66C45600D6E10A /* NCMBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997579D21D66C45600D6E10A /* NCMBRequest.swift */; };
 		997579D41D66C45600D6E10A /* NCMBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997579D21D66C45600D6E10A /* NCMBRequest.swift */; };
+		99C3BF1A1D768FBF0044F01B /* NCMBQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C3BF191D768FBF0044F01B /* NCMBQuery.swift */; };
+		99C3BF1B1D768FBF0044F01B /* NCMBQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C3BF191D768FBF0044F01B /* NCMBQuery.swift */; };
+		99C3BF1F1D7697F10044F01B /* NCMBQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C3BF1C1D7697B80044F01B /* NCMBQueryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +61,7 @@
 
 /* Begin PBXFileReference section */
 		99324E111D7400330073CA94 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
-		99324E131D7401DA0073CA94 /* NCMBACLTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBACLTest.swift; sourceTree = "<group>"; };
+		99324E131D7401DA0073CA94 /* NCMBACLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBACLTests.swift; sourceTree = "<group>"; };
 		99324E141D7401DA0073CA94 /* NCMBDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBDateTests.swift; sourceTree = "<group>"; };
 		99324E151D7401DA0073CA94 /* NCMBGeoPointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBGeoPointTests.swift; sourceTree = "<group>"; };
 		99324E161D7401DA0073CA94 /* NCMBPointerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBPointerTests.swift; sourceTree = "<group>"; };
@@ -75,6 +78,8 @@
 		997579CC1D66C42F00D6E10A /* NCMBRelation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBRelation.swift; sourceTree = "<group>"; };
 		997579CF1D66C43E00D6E10A /* NCMBPointer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBPointer.swift; sourceTree = "<group>"; };
 		997579D21D66C45600D6E10A /* NCMBRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBRequest.swift; sourceTree = "<group>"; };
+		99C3BF191D768FBF0044F01B /* NCMBQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBQuery.swift; sourceTree = "<group>"; };
+		99C3BF1C1D7697B80044F01B /* NCMBQueryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCMBQueryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +133,7 @@
 				997579CF1D66C43E00D6E10A /* NCMBPointer.swift */,
 				997579CC1D66C42F00D6E10A /* NCMBRelation.swift */,
 				997579D21D66C45600D6E10A /* NCMBRequest.swift */,
+				99C3BF191D768FBF0044F01B /* NCMBQuery.swift */,
 			);
 			path = ncmb_swift;
 			sourceTree = "<group>";
@@ -135,9 +141,10 @@
 		997579B41D66C13200D6E10A /* ncmb_swiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				99324E131D7401DA0073CA94 /* NCMBACLTest.swift */,
+				99324E131D7401DA0073CA94 /* NCMBACLTests.swift */,
 				99324E141D7401DA0073CA94 /* NCMBDateTests.swift */,
 				99324E151D7401DA0073CA94 /* NCMBGeoPointTests.swift */,
+				99C3BF1C1D7697B80044F01B /* NCMBQueryTests.swift */,
 				99324E161D7401DA0073CA94 /* NCMBPointerTests.swift */,
 				99324E171D7401DA0073CA94 /* NCMBRequestTests.swift */,
 				99324E181D7401DA0073CA94 /* NCMBTests.swift */,
@@ -253,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C3BF1A1D768FBF0044F01B /* NCMBQuery.swift in Sources */,
 				997579C71D66C40F00D6E10A /* NCMBDate.swift in Sources */,
 				997579D31D66C45600D6E10A /* NCMBRequest.swift in Sources */,
 				997579CD1D66C42F00D6E10A /* NCMBRelation.swift in Sources */,
@@ -268,8 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				99324E1B1D7401DA0073CA94 /* NCMBGeoPointTests.swift in Sources */,
+				99C3BF1F1D7697F10044F01B /* NCMBQueryTests.swift in Sources */,
 				99324E1E1D7401DA0073CA94 /* NCMBTests.swift in Sources */,
-				99324E191D7401DA0073CA94 /* NCMBACLTest.swift in Sources */,
+				99C3BF1B1D768FBF0044F01B /* NCMBQuery.swift in Sources */,
+				99324E191D7401DA0073CA94 /* NCMBACLTests.swift in Sources */,
 				997579CB1D66C41F00D6E10A /* NCMBGeopoint.swift in Sources */,
 				99324E1D1D7401DA0073CA94 /* NCMBRequestTests.swift in Sources */,
 				997579C21D66C19600D6E10A /* NCMB.swift in Sources */,
