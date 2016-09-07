@@ -28,7 +28,7 @@ class NCMBGeoPointTests: XCTestCase {
     func testToDictionary() {
         let latitude = 35.693840
         let longitude = 139.703549
-        let dic = NCMBGeoPoint(latitude:latitude ,longitude:longitude).toDictionary()
+        let dic = NCMBGeoPoint(latitude:latitude ,longitude:longitude).dictionary()
         XCTAssertEqual(dic["latitude"] as? Double, latitude)
         XCTAssertEqual(dic["longitude"] as? Double, longitude)
         XCTAssertEqual(dic["__type"] as? String, "GeoPoint")

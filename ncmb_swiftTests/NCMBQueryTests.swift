@@ -14,40 +14,40 @@ class NCMBQueryTests: XCTestCase {
         let query = NCMBQuery()
         
         query.whereEqualTo(key, value: "value")
-        XCTAssertEqual(query.toDictionary()[key]?.description, "value")
+        XCTAssertEqual(query.dictionary()[key]?.description, "value")
         
         query.whereNotEqualTo(key, value: "value")
-        XCTAssertEqual(query.toDictionary()[key] as! Dictionary, ["$ne":"value"])
+        XCTAssertEqual(query.dictionary()[key] as! Dictionary, ["$ne":"value"])
         
         query.whereLessThan(key, value: 100)
-        XCTAssertEqual(query.toDictionary()[key] as! Dictionary, ["$lt":100])
+        XCTAssertEqual(query.dictionary()[key] as! Dictionary, ["$lt":100])
         
         query.whereGreaterThan(key, value: 50)
-        XCTAssertEqual(query.toDictionary()[key] as! Dictionary, ["$gt":50])
+        XCTAssertEqual(query.dictionary()[key] as! Dictionary, ["$gt":50])
         
         query.whereExists(key)
-        XCTAssertEqual(query.toDictionary()[key] as! Dictionary, ["$exists":true])
+        XCTAssertEqual(query.dictionary()[key] as! Dictionary, ["$exists":true])
         
         query.whereDoesNotExists(key)
-        XCTAssertEqual(query.toDictionary()[key] as! Dictionary, ["$exists":false])
+        XCTAssertEqual(query.dictionary()[key] as! Dictionary, ["$exists":false])
         
         query.whereLessThanOrEqualTo(key, value: 100)
-        XCTAssertEqual(query.toDictionary()[key] as! Dictionary, ["$lte":100])
+        XCTAssertEqual(query.dictionary()[key] as! Dictionary, ["$lte":100])
 
         query.whereGreaterThanOrEqualTo(key, value: 100)
-        XCTAssertEqual(query.toDictionary()[key] as! Dictionary,  ["$gte":100])
+        XCTAssertEqual(query.dictionary()[key] as! Dictionary,  ["$gte":100])
         
         query.whereContainedIn(key, value: ["A","B","C"])
-        XCTAssertEqual(query.toDictionary()[key] as! Dictionary,  ["$in":["A","B","C"]])
+        XCTAssertEqual(query.dictionary()[key] as! Dictionary,  ["$in":["A","B","C"]])
         
         query.whereNotContainedIn(key, value: ["A","B","C"])
-        XCTAssertEqual(query.toDictionary()[key] as! Dictionary,  ["$nin":["A","B","C"]])
+        XCTAssertEqual(query.dictionary()[key] as! Dictionary,  ["$nin":["A","B","C"]])
         
         query.whereContainedInArray(key, value: ["A","B","C"])
-        XCTAssertEqual(query.toDictionary()[key] as! Dictionary,  ["$inArray":["A","B","C"]])
+        XCTAssertEqual(query.dictionary()[key] as! Dictionary,  ["$inArray":["A","B","C"]])
         
         query.whereNotContainedInArray(key, value: ["A","B","C"])
-        XCTAssertEqual(query.toDictionary()[key] as! Dictionary,  ["$ninArray":["A","B","C"]])
+        XCTAssertEqual(query.dictionary()[key] as! Dictionary,  ["$ninArray":["A","B","C"]])
     }
     
 }

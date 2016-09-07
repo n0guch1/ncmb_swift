@@ -23,7 +23,7 @@ public class NCMBPointer {
         self.objectId = params["objectId"]as! String
     }
     
-    public func toDictionary() -> (Dictionary<String, AnyObject>) {
+    public func dictionary() -> (Dictionary<String, AnyObject>) {
         let dic: Dictionary<String, AnyObject> = ["__type": "Pointer",
                                                           "className": self.className,
                                                           "objectId": self.objectId]

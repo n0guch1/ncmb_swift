@@ -73,7 +73,7 @@ public class NCMBACL {
         return get(objectId, type:NCMBACL.writeKey)
     }
     
-    public func toDictionary() -> Dictionary<String, Dictionary<String,Dictionary<String,Bool>>> {
+    public func dictionary() -> Dictionary<String, Dictionary<String,Dictionary<String,Bool>>> {
         let dic = ["acl": self.permissions]
         return dic
     }

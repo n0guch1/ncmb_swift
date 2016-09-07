@@ -25,7 +25,7 @@ public class NCMBDate {
         self.date = self.dateFromString(params["iso"] as! String)
     }
     
-    public func toDictionary() -> (Dictionary<String, AnyObject>) {
+    public func dictionary() -> (Dictionary<String, AnyObject>) {
         let dic: Dictionary<String, AnyObject> = ["__type": "Date",
                                                   "iso": description()]
         return dic

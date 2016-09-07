@@ -61,7 +61,7 @@ class NCMBACLTests: XCTestCase {
         var acl = NCMBACL()
         acl.setPublicReadAccess(true)
         acl.setUserWriteAccess(objectId, allowed: true)
-        var dic = acl.toDictionary()
+        var dic = acl.dictionary()
         XCTAssertEqual(dic["acl"]!["*"]!["read"], true)
         XCTAssertEqual(dic["acl"]![objectId]!["write"], true)
 

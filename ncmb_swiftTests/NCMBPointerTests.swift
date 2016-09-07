@@ -28,7 +28,7 @@ class NCMBPointerTests: XCTestCase {
     func testToDictionary() {
         let className = "dummyClass"
         let objectId = "dummyId"
-        let dic = NCMBPointer(className: className,objectId:objectId).toDictionary()
+        let dic = NCMBPointer(className: className,objectId:objectId).dictionary()
         XCTAssertEqual(dic["className"] as? String, className)
         XCTAssertEqual(dic["objectId"] as? String, objectId)
         XCTAssertEqual(dic["__type"] as? String, "Pointer")

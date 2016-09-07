@@ -114,7 +114,7 @@ public class NCMBRequest: NSMutableURLRequest {
     func createQueryString(query: NCMBQuery) -> String {
         var queryStr = ""
         do {
-            let jsonData = try NSJSONSerialization.dataWithJSONObject(query.toDictionary(), options:  NSJSONWritingOptions.init(rawValue: 0))
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(query.dictionary(), options:  NSJSONWritingOptions.init(rawValue: 0))
             let jsonString = String(data:jsonData, encoding:NSUTF8StringEncoding)!
             queryStr = "where=" + jsonString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())!
             URL = NSURL(string: (URL?.absoluteString)! + "?" + queryStr)

@@ -28,7 +28,7 @@ class NCMBDateTests: XCTestCase {
         formatter.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
         let date = formatter.dateFromString("2016/01/01 12:34:56.789")!
         
-        let dic = NCMBDate(date: date).toDictionary()
+        let dic = NCMBDate(date: date).dictionary()
         XCTAssertEqual(dic["iso"] as? String, "2016-01-01T12:34:56.789Z")
         XCTAssertEqual(dic["__type"] as? String, "Date")
         

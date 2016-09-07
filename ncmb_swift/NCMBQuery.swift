@@ -61,7 +61,7 @@ public class NCMBQuery {
         query[key] = ["$all":value]
     }
         
-    public func toDictionary() -> (Dictionary<String, AnyObject>) {
+    public func dictionary() -> (Dictionary<String, AnyObject>) {
         return query
     }
 }

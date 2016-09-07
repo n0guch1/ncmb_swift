@@ -23,7 +23,7 @@ public class NCMBGeoPoint {
         self.longitude = params["longitude"] as! Double
     }
     
-    public func toDictionary() -> (Dictionary<String, AnyObject>) {
+    public func dictionary() -> (Dictionary<String, AnyObject>) {
         let dic: Dictionary<String, AnyObject> = ["__type": "GeoPoint",
                                                "longitude": self.longitude,
                                                "latitude": self.latitude]
