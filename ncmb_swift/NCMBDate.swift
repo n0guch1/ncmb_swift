@@ -6,7 +6,7 @@
 
 import UIKit
 
-public class NCMBDate: NSObject {
+public class NCMBDate {
     
     public var date: NSDate = NSDate()
     
@@ -15,12 +15,10 @@ public class NCMBDate: NSObject {
     }
     
     init(dateString:String){
-        super.init()
         self.date = NCMBDate.iso8601Formatter().dateFromString(dateString)!
     }
     
     init(params:Dictionary<String,AnyObject>){
-        super.init()
         if(params["iso"] == nil){
             NSException(name: NSInvalidArgumentException, reason: "iso must not nil.", userInfo: nil).raise()
         }

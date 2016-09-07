@@ -6,7 +6,7 @@
 
 import UIKit
 
-public class NCMBACL: NSObject {
+public class NCMBACL {
     
     public static let publicPermissionKey: String = "*"
     public static let rolePermissionKey: String = "role:"
@@ -15,7 +15,7 @@ public class NCMBACL: NSObject {
     
     public var permissions = Dictionary<String, Dictionary<String,Bool>>()
     
-    override init(){
+    init(){
     }
     
     init(params: Dictionary<String, Dictionary<String,Dictionary<String,Bool>>>){

@@ -6,7 +6,7 @@
 
 import UIKit
 
-public class NCMBPointer: NSObject {
+public class NCMBPointer {
     public var className: String  = ""
     public var objectId: String  = ""
     

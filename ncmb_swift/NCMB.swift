@@ -6,7 +6,7 @@
 
 import UIKit
 
-public class NCMB: NSObject {
+public class NCMB {
 
     public static let sdkVersion = "0.1.0"
     public static var applicationKey: String  = ""

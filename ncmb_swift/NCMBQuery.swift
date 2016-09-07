@@ -6,7 +6,7 @@
 
 import UIKit
 
-public class NCMBQuery: NSObject {
+public class NCMBQuery {
     var query = Dictionary<String, AnyObject>()
     
     public func whereEqualTo(key: String , value: AnyObject) {
