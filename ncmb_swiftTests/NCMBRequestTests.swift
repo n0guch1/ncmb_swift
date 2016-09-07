@@ -94,4 +94,13 @@ class NCMBRequestTests: XCTestCase {
         waitForExpectationsWithTimeout(10.0, handler: nil)
     }
 
+    func  testHeaders() {
+        let request = NCMBRequest(URL: NSURL(string: "https://mb.api.cloud.nifty.com/2013-09-01/classes/TestClass")!)
+        let headers = request.allHTTPHeaderFields
+        XCTAssertEqual(headers!["X-NCMB-Application-Key"], NCMB.applicationKey)
+        XCTAssertEqual(headers!["Content-Type"], request.HTTPContentType)
+        XCTAssertNotNil(headers!["X-NCMB-Timestamp"], request.HTTPTimestamp)
+        XCTAssertNotNil(headers!["X-NCMB-OS-Version"], UIDevice.currentDevice().systemVersion)
+        XCTAssertNotNil(headers!["X-NCMB-SDK-Version"], NCMB.sdkVersion)
+    }
 }
