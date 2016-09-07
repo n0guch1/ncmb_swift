@@ -27,11 +27,11 @@ public class NCMBDate {
     
     public func toDictionary() -> (Dictionary<String, AnyObject>) {
         let dic: Dictionary<String, AnyObject> = ["__type": "Date",
-                                                  "iso": toString()]
+                                                  "iso": description()]
         return dic
     }
     
-    public func toString() -> (String){
+    public func description() -> (String){
         return NCMBDate.iso8601Formatter().stringFromDate(self.date)
     }
     

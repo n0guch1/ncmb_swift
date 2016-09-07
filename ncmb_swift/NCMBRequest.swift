@@ -49,7 +49,7 @@ public class NCMBRequest: NSMutableURLRequest {
         setValue("swift-" + NCMB.sdkVersion, forHTTPHeaderField: self.headerSdkVersionKey)
         setValue(UIDevice.currentDevice().systemVersion, forHTTPHeaderField: self.headerOsVersion)
         // デフォルト現在時刻を設定
-        self.timestampString = NCMBDate(date: NSDate()).toString()
+        self.timestampString = NCMBDate(date: NSDate()).description()
         setValue(self.timestampString, forHTTPHeaderField: self.headerTimestampKey)
         // デフォルトapplication/jsonを設定
         setValue(self.headerContentTypeJson, forHTTPHeaderField: self.headerContentTypeKey)
@@ -70,7 +70,7 @@ public class NCMBRequest: NSMutableURLRequest {
             return dateString
         }
         set(value) {
-            self.timestampString = NCMBDate(dateString: value).toString()
+            self.timestampString = NCMBDate(dateString: value).description()
             setValue(self.timestampString, forHTTPHeaderField: self.headerTimestampKey)
         }
     }
