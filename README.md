@@ -26,3 +26,8 @@
  ```
 
 2. carthage update
+
+# How To Use
+
+not yet  
+※ Only signature calculation function is implemented
